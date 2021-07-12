@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, OnInit } from "@angular/core";
+import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
     selector: '[takHighlight]'
@@ -20,6 +20,15 @@ export class HighlightDirective {
 
     /** Applies the highlight color to the DOM element */
     private highlight(color: string) {
-        this.el.nativeElement.style.backgroundColor = color;
+        switch(color) {
+            case 'red':
+            case 'blue':
+                this.el.nativeElement.style.backgroundColor = color;
+                this.el.nativeElement.style.color = 'white';
+            break;
+            default: 
+                this.el.nativeElement.style.backgroundColor = color;
+                this.el.nativeElement.style.color = 'black';
+        }
       }
 }

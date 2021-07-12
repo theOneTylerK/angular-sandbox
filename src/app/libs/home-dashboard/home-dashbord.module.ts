@@ -2,23 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from '@sandbox/app-routing.module';
-import { HighlightDirective } from '@sandbox/directives/highlight.directive';
-import { HomeDashboardHeaderComponent } from '@sandbox/libs/home-dashboard/src/components/home-dashboard-header/home-dashboard-header.component';
+import { GlobalModule } from '@sandbox/libs/global/global.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeDashboardComponent } from '@sandbox/libs/home-dashboard/src/containers/home-dashboard.component';
 
 
-const components = [HomeDashboardComponent, HomeDashboardHeaderComponent]
-
-const directives = [HighlightDirective]
+const components = [HomeDashboardComponent]
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GlobalModule,
+    MatCardModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [],
-  declarations: [...components, ...directives],
+  declarations: [...components],
   exports: [...components]
 })
 export class HomeDashboardModule { }

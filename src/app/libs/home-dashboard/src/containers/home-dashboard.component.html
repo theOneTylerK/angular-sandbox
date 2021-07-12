@@ -1,6 +1,36 @@
-<h1>{{'Welcome to the Sandbox'}}</h1>
+<h1 takMargin>{{'Welcome to the Sandbox'}}</h1>
 
 <br>
 <div class="dashboard">
-    <p [takHighlight]="highlightColor" class="highlight">{{ 'Test Highlight Directive' }}</p>
+    <mat-card style='width: 40em;'>
+        <mat-card-title>{{ 'Directives' }}</mat-card-title>
+        <mat-card-content style="display: flex">
+            <div takMarginSides>
+                <mat-card-subtitle takMarginTop>{{ 'Attribute' }}</mat-card-subtitle>
+                <p class="hint-message">
+                    {{ 'Hover over the text to acitvate the highlight directive. Click a button to change the highlight color.' }}
+                </p>
+                <p [takHighlight]="highlightColor" class="highlight">
+                    {{ 'Test The Highlight Directive' }}
+                </p>
+                <div>
+                    <button takMarginRight (click)="highlightColor = 'yellow'"> {{ 'Yellow' }} </button>
+                    <button takMarginRight (click)="highlightColor = 'blue'"> {{ 'Blue' }} </button>
+                    <button takMarginRight (click)="highlightColor = 'red'"> {{ 'Red' }}</button>
+                </div>
+            </div>
+            <div takMarginRight class="display-left-border">
+                <div takMargin>
+                    <mat-card-subtitle>{{ 'Structural' }}</mat-card-subtitle>
+                    <div>
+                        <p takMarginBottom>{{ 'Authorized: ' + hasAuthorization }}</p>
+                        <mat-slide-toggle takMarginBottom (change)="hasAuthorization = $event.checked"> 
+                            {{ 'Authorized' }}
+                        </mat-slide-toggle>
+                        <p *takUnless="!hasAuthorization">{{ 'You are authorized to see this message!' }}</p>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

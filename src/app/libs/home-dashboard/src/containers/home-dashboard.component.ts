@@ -7,8 +7,12 @@ import { Component } from "@angular/core";
 }) 
 
 export class HomeDashboardComponent {
-
     /** The highlight color passed to the highlight directive */
     highlightColor = 'yellow';
-    
+
+    hasAuthorization = false;
+
+    logEvent(event: any) {
+        console.log("EVENT", event);
+    }
 }
