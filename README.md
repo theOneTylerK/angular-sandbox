@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
+It is a continuously changing project that gives me a space to get my hands on items that I want to practice more directly. The Included in this project is up to date. If it is there then it is in the project.
+
+## Included in this project
+
+ - Typescript custom path configuration
+ 
+ - Attribute and Structual Directives
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
